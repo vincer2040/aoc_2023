@@ -1,3 +1,15 @@
+include(FetchContent)
+
+set(LIBCHECK_VERSION "0.15.2")
+
+# Use FetchContent to download and include libcheck
+FetchContent_Declare(
+    libcheck
+    URL https://github.com/libcheck/check/archive/${LIBCHECK_VERSION}.tar.gz
+    DOWNLOAD_EXTRACT_TIMESTAMP true  # Specify the option here
+)
+
+FetchContent_MakeAvailable(libcheck)
 add_executable(c_test ../src/c.c c_test.c)
 
 target_link_libraries(c_test PUBLIC check pthread)
