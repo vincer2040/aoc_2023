@@ -8,8 +8,14 @@
 
 ssize_t read_file(const char* path, char** buf, size_t* bytes_read) {
     size_t ins = 0, cap = BUF_INITIAL_CAP;
-    FILE* file = fopen(path, "r");
+    FILE* file;
     int ch;
+
+    if (path == NULL) {
+        file = stdin;
+    } else {
+        file = fopen(path, "r");
+    }
 
     if (file == NULL) {
         return -1;
