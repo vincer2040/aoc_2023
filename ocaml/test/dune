@@ -1,2 +1,3 @@
 (test
- (name ocaml))
+ (name day1_test)
+ (libraries day1 alcotest))
