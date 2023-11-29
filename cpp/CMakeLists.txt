@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(cpp)
+project(aoc)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,4 +14,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-Wall -Werror -pedantic -fstack-clash-protection -f
 enable_testing()
 add_subdirectory(tests)
 
-add_library(cpp src/cpp.cc)
+add_library(
+    aoc
+    src/reader.cc
+)

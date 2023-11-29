@@ -8,14 +8,14 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 add_executable(
-   cpp_test
-   cpp_test.cc
+   aoc_test
+   aoc_test.cc
 )
 
 target_link_libraries(
-    cpp_test
+    aoc_test
     GTest::gtest_main
-    cpp
+    aoc
 )
 include(GoogleTest)
-gtest_discover_tests(cpp_test)
+gtest_discover_tests(aoc_test)
