@@ -8,25 +8,22 @@
 int day1p1(const char* input, size_t input_len) {
     line_iter iter = line_iter_new(input, input_len);
     int res = 0;
-    char state[3] = {0};
     while (iter.cur) {
         size_t i, len = iter.cur_len;
+        int num1 = -1;
+        int num2 = -1;
+        int num;
         for (i = 0; i < len; ++i) {
             char ch = iter.cur[i];
-            if ('0' <= ch && ch <= '9') {
-                state[0] = ch;
-                break;
+            if (isdigit(ch)) {
+                if (num1 == -1) {
+                    num1 = ch - '0';
+                }
+                num2 = ch - '0';
             }
         }
-        for (i = len; i >= 0; i--) {
-            char ch = iter.cur[i];
-            if ('0' <= ch && ch <= '9') {
-                state[1] = ch;
-                break;
-            }
-        }
-        int t = atoi(state);
-        res += t;
+        num = (num1 * 10) + num2;
+        res += num;
         line_iter_next(&iter);
     }
     return res;
