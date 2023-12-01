@@ -14,14 +14,20 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -std=c99 -Wall -Werror -pedantic
 set(CMAKE_C_FLAGS_RELEASE "-std=c99 -Wall -Werror -pedantic -fstack-clash-protection -fstack-protector-all -fstack-protector-strong -Werror=format-security -Werror=implicit-function-declaration -pipe -O2 -s -DNDEBUG")
 
 add_library(
-    aoc
+    helpers
     src/reader.c
     src/line_iter.c
 )
 
-add_executable(
+add_library(
     day1
     src/day1.c
 )
 
-target_link_libraries(day1 aoc)
+add_executable(
+    aoc
+    src/aoc.c
+)
+
+target_link_libraries(day1 helpers)
+target_link_libraries(aoc day1)

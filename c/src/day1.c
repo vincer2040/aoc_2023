@@ -5,20 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void p1(const char* input, size_t input_len);
-void p2(const char* input, size_t input_len);
-
-int main(void) {
-    char* buf = NULL;
-    size_t bytes_read;
-    ssize_t read = read_file(NULL, &buf, &bytes_read);
-    assert(read != -1);
-    p2(buf, bytes_read);
-    free(buf);
-    return 0;
-}
-
-void p1(const char* input, size_t input_len) {
+int day1p1(const char* input, size_t input_len) {
     line_iter iter = line_iter_new(input, input_len);
     int res = 0;
     char state[3] = {0};
@@ -42,7 +29,7 @@ void p1(const char* input, size_t input_len) {
         res += t;
         line_iter_next(&iter);
     }
-    printf("%d\n", res);
+    return res;
 }
 
 typedef struct {
@@ -69,7 +56,7 @@ int lookup_str(char* str) {
     return -1;
 }
 
-void p2(const char* input, size_t input_len) {
+int day1p2(const char* input, size_t input_len) {
     line_iter iter = line_iter_new(input, input_len);
     int res = 0;
     while (iter.cur) {
@@ -99,5 +86,5 @@ void p2(const char* input, size_t input_len) {
         res += num;
         line_iter_next(&iter);
     }
-    printf("%d\n", res);
+    return res;
 }
