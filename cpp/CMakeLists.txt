@@ -18,3 +18,11 @@ add_library(
     aoc
     src/reader.cc
 )
+
+add_executable(
+    day1
+    src/day1.cc
+)
+
+target_link_libraries(day1 aoc)
+

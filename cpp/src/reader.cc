@@ -7,7 +7,11 @@ std::string read_file(const char* path) {
     std::ifstream file;
     char ch;
     if (path == NULL) {
-        std::cin >> res;
+        std::string tmp;
+        while (std::cin >> tmp) {
+            res.append(tmp);
+            res.push_back('\n');
+        }
     } else {
         file.open(path);
         while (file.is_open()) {
