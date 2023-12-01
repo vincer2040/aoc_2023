@@ -1,2 +1,8 @@
 (library
- (name day1))
+  (name reader)
+  (modules reader))
+
+(library
+ (name day1)
+ (modules day1)
+ (libraries re))

@@ -1,1 +1,4 @@
-let () = print_endline "Hello, World!"
+open Reader
+
+let () =
+    read None |> Day1.p2

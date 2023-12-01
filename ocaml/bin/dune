@@ -1,4 +1,4 @@
 (executable
  (public_name ocaml)
  (name main)
- (libraries day1))
+ (libraries reader day1))
