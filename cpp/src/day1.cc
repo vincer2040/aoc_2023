@@ -5,16 +5,7 @@
 #include <sstream>
 #include <string>
 
-void p1(const std::string& input);
-void p2(const std::string& input);
-
-int main(void) {
-    std::string input = read_file(NULL);
-    p2(input);
-    return 0;
-}
-
-void p1(const std::string& input) {
+int day1p1(const std::string& input) {
     std::istringstream iss(input);
     std::string line;
     int res = 0;
@@ -32,7 +23,7 @@ void p1(const std::string& input) {
         int num = (num1 * 10) + num2;
         res += num;
     }
-    std::cout << res << '\n';
+    return res;
 }
 
 struct lookup {
@@ -59,7 +50,7 @@ int lookup_str(const char* str) {
     return -1;
 }
 
-void p2(const std::string& input) {
+int day1p2(const std::string& input) {
     std::istringstream iss(input);
     std::string line;
     int res = 0;
@@ -88,5 +79,5 @@ void p2(const std::string& input) {
         int num = (num1 * 10) + num2;
         res += num;
     }
-    std::cout << res << '\n';
+    return res;
 }

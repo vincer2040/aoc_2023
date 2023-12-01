@@ -15,14 +15,20 @@ enable_testing()
 add_subdirectory(tests)
 
 add_library(
-    aoc
+    helpers
     src/reader.cc
 )
 
-add_executable(
+add_library(
     day1
     src/day1.cc
 )
 
-target_link_libraries(day1 aoc)
+add_executable(
+    aoc
+    src/main.cc
+)
+
+target_link_libraries(day1 helpers)
+target_link_libraries(aoc day1)
 
