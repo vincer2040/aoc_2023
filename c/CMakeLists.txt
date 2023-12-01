@@ -16,7 +16,12 @@ set(CMAKE_C_FLAGS_RELEASE "-std=c99 -Wall -Werror -pedantic -fstack-clash-protec
 add_library(
     aoc
     src/reader.c
+    src/line_iter.c
 )
 
-install(FILES build/aoc.a DESTINATION "${INSTALL_PREFIX}/lib")
-install(FILES src/aoc.h DESTINATION "${INSTALL_PREFIX}/include")
+add_executable(
+    day1
+    src/day1.c
+)
+
+target_link_libraries(day1 aoc)
