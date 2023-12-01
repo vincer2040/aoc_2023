@@ -12,12 +12,32 @@ public class Reader {
     }
 
     public String read() throws FileNotFoundException {
+        if (this.path != null) {
+            return this.readFromFile();
+        }
+        return this.readFromStdin();
+    }
+
+    private String readFromStdin() {
+        String res = "";
+        Scanner scanner = new Scanner(System.in);
+
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            res += line + "\n";
+        }
+
+        scanner.close();
+        return res;
+    }
+
+    private String readFromFile() throws FileNotFoundException {
         String res = "";
         File file = new File(this.path);
         Scanner reader = new Scanner(file);
         while (reader.hasNextLine()) {
             String line = reader.nextLine();
-            res.concat(line);
+            res += line + "\n";
         }
         reader.close();
         return res;

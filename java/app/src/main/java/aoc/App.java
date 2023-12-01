@@ -3,12 +3,11 @@
  */
 package aoc;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.io.FileNotFoundException;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+public class App {
+    public static void main(String[] args) throws FileNotFoundException {
+        int res = new DayOne(new Reader(null).read()).p2();
+        System.out.println("res: " + res);
     }
 }
