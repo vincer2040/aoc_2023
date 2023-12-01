@@ -1,11 +1,7 @@
 pub fn part_one(input: &str) {
     let t = input.lines().into_iter().fold(0, |acc, l| {
-        let first = l.chars().find(|ch| {
-            '0' <= *ch && *ch <= '9'
-        }).unwrap();
-        let last = l.chars().rev().find(|ch| {
-            '0' <= *ch && *ch <= '9'
-        }).unwrap();
+        let first = l.chars().find(|ch| '0' <= *ch && *ch <= '9').unwrap();
+        let last = l.chars().rev().find(|ch| '0' <= *ch && *ch <= '9').unwrap();
         let t = format!("{}{}", first, last);
         let res: i32 = t.parse().unwrap();
         acc + res
@@ -13,7 +9,7 @@ pub fn part_one(input: &str) {
     println!("{}", t);
 }
 
-pub fn parse_two(input: &str) {
+pub fn part_two(input: &str) {
     let t = input.lines().fold(0, |acc, l| {
         println!("{}", l);
         let mut s = l.replace("one", "one1one");
@@ -26,12 +22,8 @@ pub fn parse_two(input: &str) {
         s = s.replace("eight", "eight8eight");
         s = s.replace("nine", "nine9nine");
         println!("{}", s);
-        let first = s.chars().find(|ch| {
-            '0' <= *ch && *ch <= '9'
-        }).unwrap();
-        let last = s.chars().rev().find(|ch| {
-            '0' <= *ch && *ch <= '9'
-        }).unwrap();
+        let first = s.chars().find(|ch| '0' <= *ch && *ch <= '9').unwrap();
+        let last = s.chars().rev().find(|ch| '0' <= *ch && *ch <= '9').unwrap();
         let t = format!("{}{}", first, last);
         let res: i32 = t.parse().unwrap();
         acc + res
