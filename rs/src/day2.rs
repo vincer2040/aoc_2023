@@ -65,7 +65,7 @@ pub fn part_one(input: &str) -> i32 {
 
 pub fn part_two(input: &str) -> i32 {
     let res = input.lines().fold(0, |acc, l| {
-        let split = l.split(": ").into_iter().collect::<Vec<&str>>();
+        let split = l.split(": ").collect::<Vec<&str>>();
         let contents = split[1];
         let set = contents.split("; ").fold(vec![], |mut acc, s| {
             let set_colors: Vec<Color> = s
