@@ -1,4 +1,6 @@
 open Reader
 
 let () =
-    read None |> Day1.p2
+  let res = read None |> Day2.p2 in
+  Printf.printf "%d\n" res
+;;

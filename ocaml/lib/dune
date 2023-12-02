@@ -6,3 +6,7 @@
  (name day1)
  (modules day1)
  (libraries re))
+
+(library
+  (name day2)
+  (modules day2))
