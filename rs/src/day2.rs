@@ -26,14 +26,12 @@ fn is_possible(color: &Color) -> bool {
 
 pub fn part_one(input: &str) -> i32 {
     let res = input.lines().fold(0, |mut acc, l| {
-        let split = l.split(": ").into_iter().collect::<Vec<&str>>();
+        let split = l.split(": ").collect::<Vec<&str>>();
         let game: i32 = split[0].replace("Game ", "").parse().unwrap();
         let contents = split[1];
-        let set_strs = contents.split("; ").collect::<Vec<&str>>();
-        let set = set_strs.iter().fold(vec![], |mut acc, s| {
-            let set_colors_inp = s.split(", ").collect::<Vec<&str>>();
-            let set_colors: Vec<Color> = set_colors_inp
-                .iter()
+        let set = contents.split("; ").fold(vec![], |mut acc, s| {
+            let set_colors: Vec<Color> = s
+                .split(", ")
                 .map(|s| {
                     let t = s.split(" ").collect::<Vec<&str>>();
                     let amt: i32 = t[0].parse().unwrap();
@@ -69,11 +67,9 @@ pub fn part_two(input: &str) -> i32 {
     let res = input.lines().fold(0, |acc, l| {
         let split = l.split(": ").into_iter().collect::<Vec<&str>>();
         let contents = split[1];
-        let set_strs = contents.split("; ").collect::<Vec<&str>>();
-        let set = set_strs.iter().fold(vec![], |mut acc, s| {
-            let set_colors_inp = s.split(", ").collect::<Vec<&str>>();
-            let set_colors: Vec<Color> = set_colors_inp
-                .iter()
+        let set = contents.split("; ").fold(vec![], |mut acc, s| {
+            let set_colors: Vec<Color> = s
+                .split(", ")
                 .map(|s| {
                     let t = s.split(" ").collect::<Vec<&str>>();
                     let amt: i32 = t[0].parse().unwrap();
@@ -113,7 +109,7 @@ mod test {
     use super::part_one;
 
     #[test]
-    fn test_part_one() {
+    fn part_one_test() {
         let input = r#"Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
@@ -124,7 +120,7 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green"#;
     }
 
     #[test]
-    fn test_part_two() {
+    fn part_two_test() {
         let input = r#"Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
