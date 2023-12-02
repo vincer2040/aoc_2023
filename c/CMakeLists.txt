@@ -24,10 +24,21 @@ add_library(
     src/day1.c
 )
 
+add_library(
+    day2
+    src/day2.c
+)
+
 add_executable(
     aoc
     src/aoc.c
 )
 
 target_link_libraries(day1 helpers)
-target_link_libraries(aoc day1)
+target_link_libraries(day2 helpers)
+
+target_link_libraries(
+    aoc
+    day1
+    day2
+)

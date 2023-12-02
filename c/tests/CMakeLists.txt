@@ -21,3 +21,15 @@ target_include_directories(day1_test PUBLIC "${PROJECT_BINARY_DIR}")
 
 add_test(NAME day1_test COMMAND day1_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
 set_tests_properties(day1_test PROPERTIES TIMEOUT 30)
+
+add_executable(
+    day2_test
+    day2_test.c
+)
+
+target_link_libraries(day2_test PUBLIC check pthread day2)
+
+target_include_directories(day2_test PUBLIC "${PROJECT_BINARY_DIR}")
+
+add_test(NAME day2_test COMMAND day2_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
+set_tests_properties(day2_test PROPERTIES TIMEOUT 30)

@@ -23,4 +23,7 @@ ssize_t read_file(const char* path, char** buf, size_t* bytes_read);
 int day1p1(const char* input, size_t input_len);
 int day1p2(const char* input, size_t input_len);
 
+int day2p1(const char* input, size_t input_len);
+int day2p2(const char* input, size_t input_len);
+
 #endif /* __AOC_H__ */
