@@ -12,5 +12,4 @@ int main(void) {
     printf("%d\n", res);
     free(buf);
     return 0;
-    return 0;
 }
