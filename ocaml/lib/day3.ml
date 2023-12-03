@@ -15,20 +15,13 @@ type num =
 
 let dirs =
   [ { dy = 0; dx = -1 }
-  ; (* left *)
-    { dy = 0; dx = 1 }
-  ; (* right *)
-    { dy = -1; dx = -1 }
-  ; (* up left *)
-    { dy = -1; dx = 0 }
-  ; (* up *)
-    { dy = -1; dx = 1 }
-  ; (* up right *)
-    { dy = 1; dx = -1 }
-  ; (* down left *)
-    { dy = 1; dx = 0 }
-  ; (* down *)
-    { dy = 1; dx = 1 } (* down right *)
+  ; { dy = 0; dx = 1 }
+  ; { dy = -1; dx = -1 }
+  ; { dy = -1; dx = 0 }
+  ; { dy = -1; dx = 1 }
+  ; { dy = 1; dx = -1 }
+  ; { dy = 1; dx = 0 }
+  ; { dy = 1; dx = 1 }
   ]
 ;;
 
