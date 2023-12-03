@@ -6,8 +6,8 @@ package aoc;
 import java.io.FileNotFoundException;
 
 public class App {
-    public static void main(String[] args) throws FileNotFoundException {
-        int res = new DayOne(new Reader(null).read()).p2();
+    public static void main(String[] args) throws FileNotFoundException, Exception{
+        int res = new DayTwo(new Reader(null).read()).p2();
         System.out.println("res: " + res);
     }
 }
