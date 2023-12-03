@@ -8,7 +8,7 @@ std::string read_file(const char* path) {
     char ch;
     if (path == NULL) {
         std::string tmp;
-        while (std::cin >> tmp) {
+        while (std::getline(std::cin, tmp)) {
             res.append(tmp);
             res.push_back('\n');
         }
