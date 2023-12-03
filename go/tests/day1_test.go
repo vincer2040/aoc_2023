@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestP1(t *testing.T) {
+func TestDay1P1(t *testing.T) {
 	input := `1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
@@ -21,7 +21,7 @@ treb7uchet`
 
 }
 
-func TestP2(t *testing.T) {
+func TestDay1P2(t *testing.T) {
 	input := `two1nine
 eightwothree
 abcone2threexyz
