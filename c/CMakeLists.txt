@@ -17,6 +17,11 @@ add_library(
     helpers
     src/reader.c
     src/line_iter.c
+    src/vec.c
+    src/ht.c
+    src/util.c
+    src/sha256.c
+    src/siphash.c
 )
 
 add_library(
@@ -29,6 +34,11 @@ add_library(
     src/day2.c
 )
 
+add_library(
+    day3
+    src/day3.c
+)
+
 add_executable(
     aoc
     src/aoc.c
@@ -36,9 +46,11 @@ add_executable(
 
 target_link_libraries(day1 helpers)
 target_link_libraries(day2 helpers)
+target_link_libraries(day3 helpers)
 
 target_link_libraries(
     aoc
     day1
     day2
+    day3
 )
