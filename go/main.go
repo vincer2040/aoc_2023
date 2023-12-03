@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc_2023/cmd/day1"
+	"aoc_2023/cmd/day2"
 	"aoc_2023/internal/reader"
 	"fmt"
 )
@@ -12,6 +12,6 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	res := day1.Part2(input)
+	res := day2.Part2(input)
 	fmt.Println(res)
 }
