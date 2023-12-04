@@ -17,6 +17,7 @@ add_subdirectory(tests)
 add_library(
     helpers
     src/reader.cc
+    src/str_helpers.cc
 )
 
 add_library(
@@ -47,7 +48,7 @@ add_executable(
 target_link_libraries(day1 helpers)
 target_link_libraries(day2 helpers)
 target_link_libraries(day3 helpers)
-target_link_libraries(day4 helpers)
+target_link_libraries(day4 helpers m)
 target_link_libraries(
     aoc
     day1
