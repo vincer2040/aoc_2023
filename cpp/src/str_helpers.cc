@@ -27,3 +27,13 @@ std::string trim(const std::string& str) {
 
     return std::string(start, end);
 }
+
+size_t num_lines(const std::string& str) {
+    size_t res = 0;
+    for (auto c : str) {
+        if (c == '\n') {
+            res++;
+        }
+    }
+    return res;
+}
