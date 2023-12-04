@@ -12,6 +12,18 @@ line_iter line_iter_new(const char* input, size_t len) {
     return iter;
 }
 
+size_t num_lines(line_iter* iter) {
+    size_t i, len = iter->len;
+    size_t res = 0;
+    for (i = 0; i < len; ++i) {
+        char at = iter->input[i];
+        if (at == '\n') {
+            res++;
+        }
+    }
+    return res;
+}
+
 void line_iter_next(line_iter* iter) {
     size_t old_pos, pos;
     if (iter->pos >= iter->len) {
