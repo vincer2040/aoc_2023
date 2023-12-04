@@ -34,6 +34,11 @@ add_library(
     src/day3.cc
 )
 
+add_library(
+    day4
+    src/day4.cc
+)
+
 add_executable(
     aoc
     src/main.cc
@@ -42,10 +47,12 @@ add_executable(
 target_link_libraries(day1 helpers)
 target_link_libraries(day2 helpers)
 target_link_libraries(day3 helpers)
+target_link_libraries(day4 helpers)
 target_link_libraries(
     aoc
     day1
     day2
     day3
+    day4
 )
 

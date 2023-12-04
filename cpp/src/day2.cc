@@ -1,12 +1,8 @@
-#include <cstdio>
+#include "aoc.hh"
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <string_view>
 #include <vector>
-
-static std::vector<std::string> split_str(const std::string& str, char ch);
-static std::string trim(const std::string& str);
 
 int day2p1(const std::string& input) {
     std::istringstream iss(input);
@@ -95,29 +91,4 @@ int day2p2(const std::string& input) {
         res += full;
     }
     return res;
-}
-
-static std::vector<std::string> split_str(const std::string& str, char ch) {
-    std::vector<std::string> res;
-    std::istringstream iss(str);
-    std::string sub;
-    while (std::getline(iss, sub, ch)) {
-        res.push_back(sub);
-    }
-    return res;
-}
-
-static std::string trim(const std::string& str) {
-    auto start = str.begin();
-    auto end = str.end();
-
-    while (start != end && std::isspace(*start)) {
-        ++start;
-    }
-
-    while (start != end && std::isspace(*(end - 1))) {
-        --end;
-    }
-
-    return std::string(start, end);
 }
