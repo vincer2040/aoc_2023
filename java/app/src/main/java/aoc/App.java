@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 
 public class App {
     public static void main(String[] args) throws FileNotFoundException, Exception{
-        int res = new DayTwo(new Reader(null).read()).p2();
+        int res = new DayThree(new Reader(null).read()).p2();
         System.out.println("res: " + res);
     }
 }
