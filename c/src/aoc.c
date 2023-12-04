@@ -8,7 +8,7 @@ int main(void) {
     size_t bytes_read;
     ssize_t read = read_file(NULL, &buf, &bytes_read);
     assert(read != -1);
-    int res = day3p2(buf, bytes_read);
+    int res = day4p2(buf, bytes_read);
     printf("%d\n", res);
     free(buf);
     return 0;
