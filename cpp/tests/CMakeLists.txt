@@ -17,6 +17,7 @@ target_link_libraries(
     GTest::gtest_main
     day1
 )
+
 add_executable(
    day2_test
    day2_test.cc
@@ -27,6 +28,19 @@ target_link_libraries(
     GTest::gtest_main
     day2
 )
+
+add_executable(
+    day3_test
+    day3_test.cc
+)
+
+target_link_libraries(
+    day3_test
+    GTest::gtest_main
+    day3
+)
+
 include(GoogleTest)
 gtest_discover_tests(day1_test)
 gtest_discover_tests(day2_test)
+gtest_discover_tests(day3_test)

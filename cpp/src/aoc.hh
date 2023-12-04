@@ -9,3 +9,6 @@ int day1p2(const std::string& input);
 
 int day2p1(const std::string& input);
 int day2p2(const std::string& input);
+
+int day3p1(const std::string& input);
+int day3p2(const std::string& input);
