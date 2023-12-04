@@ -16,6 +16,30 @@ vec* vec_new(size_t data_size) {
     return vec;
 }
 
+int vec_set_cap(vec** vec, size_t cap) {
+    size_t len = (*vec)->len, data_size = (*vec)->data_size;
+    void* tmp;
+    if (cap < (*vec)->cap) {
+        return -1;
+    }
+    tmp = realloc(*vec, (sizeof **vec) + (cap * (*vec)->data_size));
+    if (tmp == NULL) {
+        return -1;
+    }
+    *vec = tmp;
+    memset((*vec)->data + (len * data_size), 0, (cap - len) * data_size);
+    (*vec)->cap = cap;
+    return 0;
+}
+
+void vec_fill(vec* vec, void* data) {
+    size_t i, len = vec->cap, data_size = vec->data_size;
+    for (i = 0; i < len; ++i) {
+        memcpy(vec->data + (i * data_size), data, data_size);
+    }
+    vec->len = len;
+}
+
 int vec_push(vec** vec, void* data) {
     size_t len = (*vec)->len, cap = (*vec)->cap, data_size = (*vec)->data_size;
     if (len == cap) {
@@ -56,6 +80,20 @@ bool vec_find(vec* vec, void* find, CmpFn* fn) {
         }
     }
     return false;
+}
+
+int vec_set_at(vec* vec, size_t idx, void* data, FreeFn* fn) {
+    size_t data_size = vec->data_size;
+    void* old;
+    if (idx > vec->len) {
+        return -1;
+    }
+    if (fn) {
+        old = vec->data + (idx * data_size);
+        fn(old);
+    }
+    memcpy(vec->data + (idx * data_size), data, data_size);
+    return 0;
 }
 
 void vec_free(vec* vec, FreeFn* fn) {
