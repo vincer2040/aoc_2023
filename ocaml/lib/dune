@@ -18,3 +18,9 @@
 (library
   (name day4)
   (modules day4))
+
+(library
+  (name day5)
+  (modules day5)
+  (libraries re))
+
