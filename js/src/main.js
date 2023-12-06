@@ -1,5 +1,5 @@
 import { read } from "./reader.js";
-import { p2 } from "./day4.js";
+import { p2 } from "./day5.js";
 
 async function main() {
     let input = await read(null);
