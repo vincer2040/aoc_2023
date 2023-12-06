@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <string>
 #include <vector>
 
@@ -19,3 +20,6 @@ int day3p2(const std::string& input);
 
 int day4p1(const std::string& input);
 int day4p2(const std::string& input);
+
+uint64_t day6p1(const std::string& input);
+uint64_t day6p2(const std::string& input);

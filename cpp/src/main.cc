@@ -3,7 +3,7 @@
 
 int main(void) {
     std::string input = read_file(NULL);
-    int res = day4p2(input);
+    uint64_t res = day6p2(input);
     std::cout << res << '\n';
     return 0;
 }
