@@ -24,6 +24,9 @@ int day4p2(const char* input, size_t input_len);
 int day5p1(const char* input, size_t input_len);
 int day5p2(const char* input, size_t input_len);
 
+int day6p1(const char* input, size_t input_len);
+uint64_t day6p2(const char* input, size_t input_len);
+
 typedef struct {
     size_t pos;
     size_t len;
@@ -110,5 +113,40 @@ typedef struct {
 ht_iter ht_iter_new(ht* ht);
 
 void ht_iter_next(ht_iter* iter);
+
+#define VSTR_MAX_SMALL_SIZE 23
+#define VSTR_MAX_LARGE_SIZE ((((uint64_t)(1)) << 56) - 1)
+
+typedef struct {
+    char data[VSTR_MAX_SMALL_SIZE];
+} vstr_sm;
+
+typedef struct __attribute__((__packed__)) {
+    char* data;
+    size_t cap;
+    size_t len : 56;
+} vstr_lg;
+
+typedef struct {
+    union {
+        vstr_sm sm;
+        vstr_lg lg;
+    } str_data;
+    uint8_t
+        is_large : 1;
+    uint8_t small_avail : 7;
+} vstr;
+
+vstr vstr_new(void);
+vstr vstr_new_len(size_t len);
+vstr vstr_from(const char* cstr);
+vstr vstr_from_len(const char* cstr, size_t len);
+vstr vstr_format(const char* fmt, ...);
+size_t vstr_len(vstr* s);
+const char* vstr_data(vstr* s);
+int vstr_cmp(vstr* a, vstr* b);
+int vstr_push_char(vstr* s, char c);
+int vstr_push_string(vstr* s, const char* str);
+void vstr_free(vstr* s);
 
 #endif /* __AOC_H__ */
