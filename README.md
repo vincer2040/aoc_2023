@@ -10,6 +10,5 @@ I will be implementing each day in multiple languages for practice and to see th
 - Cpp
 - Ocaml
 - Java
-- Go
 - Rust
 - Javascript
