@@ -21,6 +21,9 @@ int day3p2(const char* input, size_t input_len);
 int day4p1(const char* input, size_t input_len);
 int day4p2(const char* input, size_t input_len);
 
+int day5p1(const char* input, size_t input_len);
+int day5p2(const char* input, size_t input_len);
+
 typedef struct {
     size_t pos;
     size_t len;
