@@ -175,16 +175,8 @@ let p1 input =
       let split = String.split_on_char ' ' line in
       let hand = List.nth split 0 in
       let bid = List.nth split 1 |> int_of_string in
-      hand, bid)
-  in
-  let calculated =
-    List.fold_left
-      (fun acc (hand, bid) ->
-        let hand_result = calculate_hand hand in
-        (hand_result, hand, bid) :: acc)
-      []
-      hands_bids
-    |> List.rev
+      let calculated = calculate_hand hand in
+      calculated, hand, bid)
   in
   let compare (ares, ahand, _) (bres, bhand, _) =
     if ares != bres
@@ -195,7 +187,7 @@ let p1 input =
       String.compare ordered_a ordered_b)
   in
   let sorted =
-    List.sort compare calculated |> List.mapi (fun i (_, _, bid) -> i + 1, bid)
+    List.sort compare hands_bids |> List.mapi (fun i (_, _, bid) -> i + 1, bid)
   in
   let result = List.fold_left (fun acc (i, bid) -> acc + (i * bid)) 0 sorted in
   result
@@ -209,16 +201,8 @@ let p2 input =
       let split = String.split_on_char ' ' line in
       let hand = List.nth split 0 in
       let bid = List.nth split 1 |> int_of_string in
-      hand, bid)
-  in
-  let calculated =
-    List.fold_left
-      (fun acc (hand, bid) ->
-        let hand_result = calculate_hand2 hand in
-        (hand_result, hand, bid) :: acc)
-      []
-      hands_bids
-    |> List.rev
+      let calculated = calculate_hand2 hand in
+      calculated, hand, bid)
   in
   let compare (ares, ahand, _) (bres, bhand, _) =
     if ares != bres
@@ -229,7 +213,7 @@ let p2 input =
       String.compare ordered_a ordered_b)
   in
   let sorted =
-    List.sort compare calculated |> List.mapi (fun i (_, _, bid) -> i + 1, bid)
+    List.sort compare hands_bids |> List.mapi (fun i (_, _, bid) -> i + 1, bid)
   in
   let result = List.fold_left (fun acc (i, bid) -> acc + (i * bid)) 0 sorted in
   result
