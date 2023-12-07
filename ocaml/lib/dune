@@ -29,3 +29,9 @@
   (modules day6)
   (libraries re))
 
+(library
+  (name day7)
+  (modules day7)
+  (preprocess (pps ppx_deriving.show ppx_deriving.ord ppx_deriving.eq))
+  (libraries fmt ppx_deriving))
+
