@@ -61,6 +61,11 @@ add_library(
     src/day7.c
 )
 
+add_library(
+    day8
+    src/day8.c
+)
+
 add_executable(
     aoc
     src/aoc.c
@@ -73,6 +78,7 @@ target_link_libraries(day4 helpers m)
 target_link_libraries(day5 helpers)
 target_link_libraries(day6 helpers m)
 target_link_libraries(day7 helpers)
+target_link_libraries(day8 helpers)
 
 target_link_libraries(
     aoc
@@ -83,4 +89,5 @@ target_link_libraries(
     day5
     day6
     day7
+    day8
 )

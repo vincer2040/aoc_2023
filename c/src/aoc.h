@@ -30,6 +30,9 @@ uint64_t day6p2(const char* input, size_t input_len);
 int day7p1(const char* input, size_t input_len);
 int day7p2(const char* input, size_t input_len);
 
+int day8p1(const char* input, size_t input_len);
+uint64_t day8p2(const char* input, size_t input_len);
+
 typedef struct {
     size_t pos;
     size_t len;
@@ -135,8 +138,7 @@ typedef struct {
         vstr_sm sm;
         vstr_lg lg;
     } str_data;
-    uint8_t
-        is_large : 1;
+    uint8_t is_large : 1;
     uint8_t small_avail : 7;
 } vstr;
 
