@@ -23,3 +23,6 @@ int day4p2(const std::string& input);
 
 uint64_t day6p1(const std::string& input);
 uint64_t day6p2(const std::string& input);
+
+int day7p1(const std::string& input);
+int day7p2(const std::string& input);

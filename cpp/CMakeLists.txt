@@ -45,6 +45,11 @@ add_library(
     src/day6.cc
 )
 
+add_library(
+    day7
+    src/day7.cc
+)
+
 add_executable(
     aoc
     src/main.cc
@@ -62,5 +67,6 @@ target_link_libraries(
     day3
     day4
     day6
+    day7
 )
 
