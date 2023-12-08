@@ -27,6 +27,9 @@ int day5p2(const char* input, size_t input_len);
 int day6p1(const char* input, size_t input_len);
 uint64_t day6p2(const char* input, size_t input_len);
 
+int day7p1(const char* input, size_t input_len);
+int day7p2(const char* input, size_t input_len);
+
 typedef struct {
     size_t pos;
     size_t len;
@@ -148,5 +151,7 @@ int vstr_cmp(vstr* a, vstr* b);
 int vstr_push_char(vstr* s, char c);
 int vstr_push_string(vstr* s, const char* str);
 void vstr_free(vstr* s);
+
+void quick_sort(void* arr, size_t len, size_t data_size, CmpFn* fn);
 
 #endif /* __AOC_H__ */

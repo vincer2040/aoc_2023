@@ -22,6 +22,8 @@ add_library(
     src/util.c
     src/sha256.c
     src/siphash.c
+    src/vstr.c
+    src/quick_sort.c
 )
 
 add_library(
@@ -54,6 +56,11 @@ add_library(
     src/day6.c
 )
 
+add_library(
+    day7
+    src/day7.c
+)
+
 add_executable(
     aoc
     src/aoc.c
@@ -65,6 +72,7 @@ target_link_libraries(day3 helpers)
 target_link_libraries(day4 helpers m)
 target_link_libraries(day5 helpers)
 target_link_libraries(day6 helpers m)
+target_link_libraries(day7 helpers)
 
 target_link_libraries(
     aoc
@@ -74,4 +82,5 @@ target_link_libraries(
     day4
     day5
     day6
+    day7
 )
