@@ -13,6 +13,18 @@ std::vector<std::string> split_str(const std::string& str, char ch) {
     return res;
 }
 
+std::vector<std::string> split_on_string(const std::string& str, const std::string& delim) {
+    std::vector<std::string> res;
+    size_t pos = 0;
+    size_t found;
+    while ((found = str.find(delim, pos)) != std::string::npos) {
+        res.push_back(str.substr(pos, found - pos));
+        pos = found + delim.length();
+    }
+    res.push_back(str.substr(pos));
+    return res;
+}
+
 std::string trim(const std::string& str) {
     auto start = str.begin();
     auto end = str.end();
