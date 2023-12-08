@@ -35,3 +35,9 @@
   (preprocess (pps ppx_deriving.show ppx_deriving.ord ppx_deriving.eq))
   (libraries fmt ppx_deriving))
 
+(library
+  (name day8)
+  (modules day8)
+  (preprocess (pps ppx_deriving.show))
+  (libraries fmt re ppx_deriving))
+
