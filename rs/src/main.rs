@@ -6,10 +6,11 @@ pub mod day4;
 pub mod day5;
 pub mod day6;
 pub mod day7;
+pub mod day8;
 
 fn main() -> Result<(), std::io::Error> {
     let input = reader::read(None)?;
-    let res = day7::part_two(&input);
+    let res = day8::part_two(&input);
     println!("{}", res);
     Ok(())
 }
