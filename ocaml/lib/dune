@@ -41,3 +41,7 @@
   (preprocess (pps ppx_deriving.show))
   (libraries fmt re ppx_deriving))
 
+(library
+  (name day9)
+  (modules day9)
+  (libraries fmt))
