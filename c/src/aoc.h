@@ -33,6 +33,9 @@ int day7p2(const char* input, size_t input_len);
 int day8p1(const char* input, size_t input_len);
 uint64_t day8p2(const char* input, size_t input_len);
 
+int day9p1(const char* input, size_t input_len);
+int day9p2(const char* input, size_t input_len);
+
 typedef struct {
     size_t pos;
     size_t len;
@@ -155,5 +158,20 @@ int vstr_push_string(vstr* s, const char* str);
 void vstr_free(vstr* s);
 
 void quick_sort(void* arr, size_t len, size_t data_size, CmpFn* fn);
+
+typedef struct {
+    size_t len;
+    size_t cap;
+    CmpFn* cmp_key;
+    unsigned char seed[HT_SEED_SIZE];
+    ht_bucket* buckets;
+} set;
+
+set set_new(CmpFn* cmp_key);
+size_t set_len(set* set);
+bool set_has(set* set, void* key, size_t key_len);
+int set_insert(set* set, void* key, size_t key_len);
+int set_delete(set* set, void* key, size_t key_len, FreeFn* free_fn);
+void set_free(set* set, FreeFn* free_fn);
 
 #endif /* __AOC_H__ */

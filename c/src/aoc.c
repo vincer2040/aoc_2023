@@ -10,8 +10,8 @@ int main(void) {
     if (read == -1) {
         return 1;
     }
-    uint64_t res = day8p2(buf, bytes_read);
-    printf("%lu\n", res);
+    int res = day9p2(buf, bytes_read);
+    printf("%d\n", res);
     free(buf);
     return 0;
 }

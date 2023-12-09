@@ -24,6 +24,7 @@ add_library(
     src/siphash.c
     src/vstr.c
     src/quick_sort.c
+    src/set.c
 )
 
 add_library(
@@ -66,6 +67,11 @@ add_library(
     src/day8.c
 )
 
+add_library(
+    day9
+    src/day9.c
+)
+
 add_executable(
     aoc
     src/aoc.c
@@ -79,6 +85,7 @@ target_link_libraries(day5 helpers)
 target_link_libraries(day6 helpers m)
 target_link_libraries(day7 helpers)
 target_link_libraries(day8 helpers)
+target_link_libraries(day9 helpers)
 
 target_link_libraries(
     aoc
@@ -90,4 +97,5 @@ target_link_libraries(
     day6
     day7
     day8
+    day9
 )
