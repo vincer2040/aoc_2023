@@ -1,5 +1,5 @@
-#include "siphash.h"
 #include "aoc.h"
+#include "siphash.h"
 #include <assert.h>
 #include <memory.h>
 #include <stdint.h>
@@ -412,7 +412,7 @@ ht_entry* ht_entry_new(void* key, size_t key_len, void* data,
         offset = key_len + ht_padding(key_len);
         needed = (sizeof *entry) + offset + data_size;
     } else {
-        needed = key_len;
+        needed = (sizeof *entry) + key_len;
     }
     entry = malloc(needed);
     if (entry == NULL) {
@@ -439,7 +439,7 @@ void ht_entry_free(ht_entry* entry, FreeFn* free_key, FreeFn* free_val) {
 }
 
 ht_iter ht_iter_new(ht* ht) {
-    ht_iter iter = { 0 };
+    ht_iter iter = {0};
     iter.ht = ht;
     ht_iter_next(&iter);
     ht_iter_next(&iter);
