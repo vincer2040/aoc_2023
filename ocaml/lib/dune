@@ -45,3 +45,8 @@
   (name day9)
   (modules day9)
   (libraries fmt))
+
+(library
+  (name day10)
+  (modules day10)
+  (libraries fmt))
