@@ -174,10 +174,7 @@ let p2 input =
   let num_rows = List.length pipes in
   let row_len = String.length (List.nth pipes 0) in
   let start_y, start_x = find_start pipes num_rows row_len (0, 0) in
-  let path =
-    (start_y, start_x) :: find_loop pipes (start_y, start_x)
-    |> List.map (fun (y, x) -> x, y)
-  in
+  let path = (start_y, start_x) :: find_loop pipes (start_y, start_x) in
   let len = List.length path in
   let s = shoelace path in
   let x = (len / 2) - 1 in
