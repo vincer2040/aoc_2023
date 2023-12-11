@@ -34,3 +34,6 @@ uint64_t day8p2(const std::string& input);
 
 int day9p1(const std::string& input);
 int day9p2(const std::string& input);
+
+uint64_t day11p1(const std::string& input);
+uint64_t day11p2(const std::string& input);
