@@ -7,11 +7,6 @@ typedef struct {
     uint64_t x;
 } point;
 
-typedef struct {
-    point p;
-    vec* points;
-} map_item;
-
 static uint64_t solve(const char* input, size_t input_len, uint64_t num_times);
 static vec* row_expansions(const char* input, size_t input_len);
 static vec* col_expansions(const char* input, size_t input_len);
