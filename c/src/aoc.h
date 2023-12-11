@@ -36,6 +36,9 @@ uint64_t day8p2(const char* input, size_t input_len);
 int day9p1(const char* input, size_t input_len);
 int day9p2(const char* input, size_t input_len);
 
+uint64_t day11p1(const char* input, size_t input_len);
+uint64_t day11p2(const char* input, size_t input_len);
+
 typedef struct {
     size_t pos;
     size_t len;
