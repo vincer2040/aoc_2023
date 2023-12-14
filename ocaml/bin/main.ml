@@ -1,6 +1,6 @@
 open Reader
 
 let () =
-  let res = read None |> Day13.p1 in
+  let res = read None |> Day14.p2 in
   Fmt.pr "%d\n" res
 ;;
