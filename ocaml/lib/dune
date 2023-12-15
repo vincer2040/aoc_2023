@@ -70,3 +70,9 @@
   (name day14)
   (modules day14)
   (libraries fmt))
+
+(library
+  (name day15)
+  (modules day15)
+  (preprocess (pps ppx_deriving.show))
+  (libraries fmt ppx_deriving))
