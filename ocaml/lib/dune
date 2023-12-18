@@ -81,4 +81,16 @@
   (name day16)
   (modules day16)
   (preprocess (pps ppx_deriving.show ppx_deriving.eq))
-  (libraries unix fmt ppx_deriving))
+  (libraries fmt ppx_deriving))
+
+(library
+  (name day17)
+  (modules day17)
+  (preprocess (pps ppx_deriving.show ppx_deriving.eq))
+  (libraries fmt ppx_deriving))
+
+(library
+  (name day18)
+  (modules day18)
+  (preprocess (pps ppx_deriving.show ppx_deriving.eq))
+  (libraries re fmt ppx_deriving))
